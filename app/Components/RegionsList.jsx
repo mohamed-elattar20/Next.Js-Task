@@ -1,7 +1,13 @@
-const RegionsList = () => {
+import Item from "./Item";
+
+const RegionsList = ({ regionsObj }) => {
   return (
     <>
-      <h1>RegionsList</h1>
+      {regionsObj?.value?.regions?.data.map((region) => (
+        <div key={region.id} className="col-sm-6 col-md-3 col-lg-3">
+          <Item region={region} />
+        </div>
+      ))}
     </>
   );
 };
